@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 350px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        th {
+            width: 100px;
+            text-align: left;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        $(function () {
+            $('#form').submit(function () {
+                let id = $('#id').val();
+                let password = $('#password').val();
+                if (!id) {
+                    alert('아이디를 입력하세요.');
+                    $('#id').focus();
+                    return false;
+                } else if (!password) {
+                    alert('비밀번호를 입력하세요.');
+                    $('#password').focus();
+                    return false;
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class='container'>
+        <h2>로그인</h2>
+        <hr>
+        <form id='form'>
+            <table>
+                <tr>
+                    <th>아이디</th>
+                    <td><input type='text' id='id'></td>
+                </tr>
+                <tr>
+                    <th>비밀번호</th>
+                    <td><input type='password' id='password'></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td style="padding: 20px; text-align: center;">
+                        <input type='submit' value='로그인'>&nbsp&nbsp
+                        <input type='reset' value='취소'>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+</body>
+
+</html>
